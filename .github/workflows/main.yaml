@@ -1,24 +1,24 @@
 name: CI
 on:
-	push:
-		branches:
-			- '*'
-	pull_request:
-		branches:
-			- '*'
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
 jobs:
   test:
-		runs-on: ubuntu-latest
-		steps:
-		- uses: actions/checkout@v2
-		- name: Install required packages
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install required packages
       run: sudo apt-get install -f yamllint shellcheck
-		- name: Run shell check
-			run: |
-				make shellcheck
-		- name: Run docker check
-			run: |
-				make docker-lint
-		- name: Run yaml check
-		  run: |
-				make yaml-lint
+    - name: Run shell check
+      run: |
+        make shellcheck
+    - name: Run docker check
+      run: |
+        make docker-lint
+    - name: Run yaml check
+      run: |
+	make yaml-lint
