@@ -1,0 +1,18 @@
+apiVersion: skaffold/v2beta2
+kind: Config
+metadata:
+  name: application
+build:
+  artifacts:
+  - image: borland6/cicd-app
+deploy:
+  helm:
+    releases:
+    - name: qoo-cicd
+      chartPath: helm
+      values:
+        nginx.image: borland6/cicd-app
+      imageStrategy:
+        helm: {}
+      setValues:
+        nginx.pullPolicy: IfNotPresent

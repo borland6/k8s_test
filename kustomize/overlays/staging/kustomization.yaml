@@ -1,0 +1,7 @@
+namePrefix: staging-
+commonLabels:
+  owner: borland6
+bases:
+  - ../../base
+patches:
+  - replica_count.yaml

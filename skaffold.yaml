@@ -1,0 +1,22 @@
+apiVersion: skaffold/v2beta9
+kind: Config
+metadata:
+  name: application
+build:
+  artifacts:
+  - image: borland6/cicd-app
+deploy:
+  kustomize:
+    paths:
+    - kustomize/base
+profiles:
+- name: production
+  deploy:
+    kustomize:
+      paths:
+      - kustomize/overlays/production
+- name: staging
+  deploy:
+    kustomize:
+      paths:
+      - kustomize/overlays/staging
