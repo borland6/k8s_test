@@ -19,6 +19,7 @@ PEACE!
 ZEN!
 ZEROLIMIT!
 I AM SORRY!
+PLEASE FORGIVE ME!
 EOF
 
 #Generate a new index.html under /var/www/html
